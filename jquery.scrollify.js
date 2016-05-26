@@ -673,4 +673,20 @@
 			console.warn("Scrollify warning: Options need to be in an object.");
 		}
 	};
+	
+	$.scrollify.isFirstSection = function(callback){
+		if(callback !== void 0 && typeof callback === 'function'){
+			callback($.scrollify.isFirstSection(), $.scrollify.current());
+		}else{
+			return 	index == 0;
+		}
+	};
+	
+	$.scrollify.isLastSection = function(callback){
+		if(callback !== void 0 && typeof callback === 'function'){
+			callback($.scrollify.isLastSection(), $.scrollify.current());
+		}else{
+			return 	index == elements.length-1;
+		}
+	};
 }));
